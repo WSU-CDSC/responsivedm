@@ -1,15 +1,15 @@
 .card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    max-width: 300px;
+    max-width: 330px;
     margin: auto;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     background-color: white;
     text-align: center;
 }
 
 .cardbutton {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    max-width: 300px;
+    max-width: 330px;
     margin: auto;
     background-color: white;
     text-align: center;
@@ -21,4 +21,14 @@
 
 .center-text {
     text-align: center;
+}
+
+.jumbotron {
+ background: #5e6a71;
+ border: 20px;
+ border-style: solid;
+ border-color: #00a5bd;
+ color: #ffffff;
+ text-align: center !important
+ margin: auto;
 }
