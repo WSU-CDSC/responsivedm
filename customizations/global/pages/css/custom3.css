@@ -9,6 +9,7 @@
 
 .centered {
     position: absolute;
+    background-color: #6b6f75;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
