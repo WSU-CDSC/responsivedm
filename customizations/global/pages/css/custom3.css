@@ -1,12 +1,51 @@
-
-.Header-header{width:100%;position:relative;height:130px
+.Header-header{width: 100%;
+    position: relative;
+    height: 130px
 }
 
-.Header-logoImage{max-height:110px;padding-left:10px;margin-right:1rem;float:left
+.clearfix {
+    background-color: #5e6a71 !important
 }
 
-.jumbotron {
-    text-align: center
+@media screen and (min-width: 768px) {
+
+    .Header-logoImage {
+        margin-top: 10px !important;
+        height: 80px;
+        width: auto;
+    }
+
+    .Header-controls {
+        width: 100%;
+        position: static;
+    }
+
+    .Header-hamburgerHolder {
+        float: left;
+    }
+
+    .Header-hamburgerHolder .btn-group button {
+        display: none;
+    }
+
+    .Header-headerMenuLinks {
+        position: static;
+        display: flex;
+        flex-wrap: nowrap;
+        border: none;
+        box-shadow: none;
+    }
+
+    .Header-headerMenuLinks h3 {
+        margin: 5px;
+    }
+
+}
+
+.Header-logoImage{max-height: 110px;
+    padding-left: 10px;
+    margin-right:1rem ;
+    float:left
 }
 
 .searchcard {
@@ -50,4 +89,6 @@
     border-color: #00a5bd;
     color: #ffffff;
     margin-bottom: 10px;
+    margin-top: 15px;
+    text-align: center;
 }
