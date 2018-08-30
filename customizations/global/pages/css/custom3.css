@@ -5,14 +5,19 @@ body {
 .Header-header{
     width: 100%;
     position: relative;
-    height: 130px
+    height: 115px;
+    background-color: #5e6a71;
 }
 
+.Header-logoNameContainer {
+    background-color: #981e32;
+    height:70;
+}
 .clearfix {
     background-color: #5e6a71 !important
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 900px) {
 
     .Header-logoImage {
         margin-top: 10px !important;
@@ -21,12 +26,11 @@ body {
     }
 
     .Header-controls {
-        width: 100%;
-        position: static;
+        width: 40%;
     }
 
     .Header-hamburgerHolder {
-        float: left;
+        float: right;
     }
 
     .Header-hamburgerHolder .btn-group button {
