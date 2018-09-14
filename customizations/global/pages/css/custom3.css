@@ -17,13 +17,15 @@ body {
     background-color: #5e6a71 !important
 }
 
-@media screen and (min-width: 900px) {
-
+@media screen and (min-width: 768px) {
     .Header-logoImage {
         margin-top: 10px !important;
         height: 80px;
         width: auto;
     }
+}
+
+@media screen and (min-width: 910px) {
 
     .Header-controls {
         width: 40%;
