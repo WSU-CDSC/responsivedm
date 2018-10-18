@@ -100,8 +100,31 @@ body {
 
 .align-right-img {
     float: right;
+    margin-left: 5px;
 }
 
 .align-left-img {
     float: left;
+    margin-right: 5px;
+}
+
+.align-center-img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.masc-id {
+    width: 600px;
+    padding-top: 5px;
+    padding-right: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    background-color: #f6f6f6;
+    font-size: 0.9em;
+    color: #262a2d;
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
