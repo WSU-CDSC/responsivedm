@@ -114,17 +114,17 @@ body {
     margin-right: auto;
 }
 
-.masc-id {
-    width: 600px;
+#masc_info {
+    width: 75%;
     padding-top: 5px;
     padding-right: 5px;
     padding-bottom: 5px;
     padding-left: 10px;
     background-color: #f6f6f6;
     font-size: 0.9em;
+    margin-bottom: 10px;
     color: #262a2d;
-    text-align: center;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+    font-family: 'Lucida Grande', 'Lucida Sans Unicode', Arial, san-serif; font-style: normal;
+    text-align: left;
+	border: 1px solid #e0e0e0;
 }
