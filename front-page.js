@@ -14,5 +14,10 @@ function crbehaSearch() {
 
 function SearchDropDownSociety() {
     var input = document.getElementById('SearchPathSociety').value
-    window.open("http://cdm16866.contentdm.oclc.org/digital/search/collection/" + input + "/field/all/mode/all/conn/and/cosuppress/","_self");
+    window.open("http://cdm16866.contentdm.oclc.org/digital/search/collection/" + input + "/mode/all/conn/and/cosuppress/","_self");
+}
+
+function SearchDropDownType() {
+    var input = document.getElementById('SearchPathType').value
+    window.open("http://cdm16866.contentdm.oclc.org/digital/search/collection/" + input + "/field/type!all/mode/all!all/conn/and!and","_self");
 }
