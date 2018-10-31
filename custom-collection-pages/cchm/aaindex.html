@@ -1,0 +1,191 @@
+---
+header: true
+footer: true
+title: CRBEHA
+---
+
+<body>
+  <main>
+    <div class="CollectionLanding-maincontentLanding shared-contentContainer">
+      <br>
+    <ul class="nav nav-tabs">
+      <li><a href="/digital/collection/cchm/custom/crbasin">Home</a></li>
+      <li><a href="/digital/collection/cchm/custom/crbasin_background"">Project Background</a></li>
+      <li><a href="/digital/collection/cchm/custom/crbasin_focus">Project Focus</a></li>
+      <li><a href="/digital/collection/cchm/custom/crbasin_browse">Browse/Search</a></li>
+      <li><a href="/digital/collection/cchm/custom/crbasin_tutorials/">Tutorials/Lesson Plans</a></li>
+      <li><a href="/digital/collection/cchm/custom/crbasin_team">Project Team</a></li>
+      <li><a href="/digital/collection/cchm/custom/crbasin_partners">Project Partners</a></li>
+    </ul>
+
+    <table width="50%" border="1" cellpadding="0" bordercolor="#000000" align="center">
+
+      <tr>
+
+        <td><TABLE WIDTH=700 BORDER=0 CELLPADDING=0 CELLSPACING=0>
+
+            <TR>
+
+              <TD> <IMG src="/customizations/collection/cchm/pages/img/aamer.jpg" "AMMER"></TD>
+            </TR>
+
+            <TR>
+
+              <TD COLSPAN=2><p><font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+
+                  <a href="http://content.libraries.wsu.edu/cdm/aa1/collection/cchm">Historical Overview<br>
+
+                  </a></font></p>
+
+              </TD>
+
+            </TR>
+
+          </TABLE> </td>
+
+      </tr>
+
+    </table>
+
+    <!-- End ImageReady Slices -->
+    <table width="700" border="0" cellpadding="5" align="center">
+      <tr>
+        <td><div align="right">
+            <p><font size="2" face="Verdana, Arial, Helvetica, sans-serif"><a href="/digital/collection/cchm/custom/crbasin_browse"><img src="/customizations/collection/cchm/pages/img/back.jpg" width="44" height="21" border="0" alt="Back to Browse the Archive"></a></font></p>
+            <p align="left"><font size="2" face="Verdana, Arial, Helvetica, sans-serif"><strong>Search African American materials by Keywords:</strong> </font></p>
+            </div>
+    <p>Keywords:</p>
+      <p>
+        <input id='SearchTerm' type="text" value="African Americans" style="height: 34px">
+        <button type="Submit" class="btn btn-default" type="submit" onclick="crbehaSearch()">Search</button>
+      </p>
+    </b></p>
+    <strong>You may also search for African American materials by:</strong></font></P>
+
+    Search by Historical Society:
+
+    <select id='SearchPathSociety'>
+      <option value="wsuvan1/searchterm/African Americans/field/subjec">Oregon Historical Society</option>
+      <option value="cchm/searchterm/African Americans/field/subjec">Clark County Historical Museum</option>
+      <option value="imls_2/searchterm/African Americans/field/subjec">Washington State Historical Society</option>
+      <option value="5985!cvoralhist!methhist/searchterm/African Americans/field/subjec">MASC WSU- Pullman</option>
+      <option value="imls_3/searchterm/African Americans/field/subjec">Idaho State Historical Society</option>
+    </select>
+    <button type="Submit" class="btn btn-default" type="submit" onclick="SearchDropDownSociety()">Search
+    </button>
+
+          <p align="left"><font size="2" face="Verdana, Arial, Helvetica, sans-serif"><strong>OR</strong></font><font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+
+    	<form method="get" action="http://content.libraries.wsu.edu/cdm4/search.php"><input type="hidden" name="Horde" value="766c1e353d23412786111a7c33d0186b" />
+
+    <input type="hidden" name="CISOOP1" value="all">
+    <input type="hidden" name="CISORESTMP" value="results.php">
+    <input type="hidden" name="CISOVIEWTMP" value="item_viewer.php">
+    <input type="hidden" name="CISOMODE" value="thumb">
+    <input type="hidden" name="CISOGRID" value="thumbnail,A,1;title,A,1;subjec,A,0;descri,200,0;none,A,0;20;title,none,none,none,none">
+    <input type="hidden" name="CISOBIB" value="title,A,1,N;subjec,A,0,N;descri,200,0,N;none,A,0,N;none,A,0,N;20;title,none,none,none,none">
+    <input type="hidden" name="CISOTHUMB" value="20 (4x5);title,none,none,none,none">
+    <input type="hidden" name="CISOTITLE" value="20;title,none,none,none,none">
+    <input type="hidden" name="CISOHIERA" value="20;subjec,title,none,none,none">
+    <input type="hidden" name="CISOSUPPRESS" value="0">
+
+    Search by Material Type:
+
+    <select name="CISOPARM">
+    <option value="/5985 /cchm /wsuvan1 /imls_2 /imls_3 /cvoralhist /methhist :CISOSEARCHALL:african americans Text">Text</option>
+    <option value="/5985 /cchm /wsuvan1 /imls_2 /imls_3 /cvoralhist /methhist :CISOSEARCHALL: african americans Photographs">Photographs</option>
+    <option value="/5985 /cchm /wsuvan1 /imls_2 /imls_3 /cvoralhist /methhist :CISOSEARCHALL:afican americans Interviews">Oral Histories</option>
+    <option value="/5985 /cchm /wsuvan1 /imls_2 /imls_3 /cvoralhist /methhist :CISOSEARCHALL:african americans Ephemera">Ephemera</option>
+    <option value="/5985 /cchm /wsuvan1 /imls_2 /imls_3 /cvoralhist /methhist :CISOSEARCHALL: african americans artifacts">Artifacts</option>
+    <option value="/5985 /cchm /wsuvan1 /imls_2 /imls_3 /cvoralhist /methhist :CISOSEARCHALL:african americans Video">Video</option>
+    </select>
+
+    <input type="submit" value="go" class="button">
+
+    </form>
+
+
+          <p align="left"><font size="2" face="Verdana, Arial, Helvetica, sans-serif"><strong>OR</strong></font><font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+
+            </font></p>
+    <form method="get" action="http://content.libraries.wsu.edu/cdm4/search.php"><input type="hidden" name="Horde" value="766c1e353d23412786111a7c33d0186b" />
+
+    <input type="hidden" name="CISOOP1" value="all">
+    <input type="hidden" name="CISORESTMP" value="results.php">
+    <input type="hidden" name="CISOVIEWTMP" value="item_viewer.php">
+    <input type="hidden" name="CISOMODE" value="thumb">
+    <input type="hidden" name="CISOGRID" value="thumbnail,A,1;title,A,1;subjec,A,0;descri,200,0;none,A,0;20;title,none,none,none,none">
+    <input type="hidden" name="CISOBIB" value="title,A,1,N;subjec,A,0,N;descri,200,0,N;none,A,0,N;none,A,0,N;20;title,none,none,none,none">
+    <input type="hidden" name="CISOTHUMB" value="20 (4x5);title,none,none,none,none">
+    <input type="hidden" name="CISOTITLE" value="20;title,none,none,none,none">
+    <input type="hidden" name="CISOHIERA" value="20;subjec,title,none,none,none">
+    <input type="hidden" name="CISOSUPPRESS" value="0">
+
+                  Search
+
+                  by Date:
+
+    <select name="CISOPARM">
+    <option value="/5985 /cchm /wsuvan1 /imls_2 /imls_3 /cvoralhist /methhist :CISOSEARCHALL:african americans 1860's">1860-1869</option>
+    <option value="/5985 /cchm /wsuvan1 /imls_2 /imls_3 /cvoralhist /methhist :CISOSEARCHALL:african americans 1870's">1870-1879</option>
+    <option value="/5985 /cchm /wsuvan1 /imls_2 /imls_3 /cvoralhist /methhist :CISOSEARCHALL:african americans 1880's">1880-1889</option>
+    <option value="/5985 /cchm /wsuvan1 /imls_2 /imls_3 /cvoralhist /methhist :CISOSEARCHALL:african americans 1890's">1890-1899</option>
+    <option value="/5985 /cchm /wsuvan1 /imls_2 /imls_3 /cvoralhist /methhist :CISOSEARCHALL:african americans 1900's">1900-1909</option>
+    <option value="/5985 /cchm /wsuvan1 /imls_2 /imls_3 /cvoralhist /methhist :CISOSEARCHALL:african americans 1910's">1910-1919</option>
+    <option value="/5985 /cchm /wsuvan1 /imls_2 /imls_3 /cvoralhist /methhist :CISOSEARCHALL:african americans 1920's">1920-1929</option>
+    <option value="/5985 /cchm /wsuvan1 /imls_2 /imls_3 /cvoralhist /methhist :CISOSEARCHALL:african americans 1930's">1930-1939</option>
+    <option value="/5985 /cchm /wsuvan1 /imls_2 /imls_3 /cvoralhist /methhist :CISOSEARCHALL:african americans 1940's">1940-1949</option>
+    <option value="/5985 /cchm /wsuvan1 /imls_2 /imls_3 /cvoralhist /methhist :CISOSEARCHALL:african americans 1950's">1950-1959</option>
+    <option value="/5985 /cchm /wsuvan1 /imls_2 /imls_3 /cvoralhist /methhist :CISOSEARCHALL:african americans 1960's">1960-1969</option>
+    <option value="/5985 /cchm /wsuvan1 /imls_2 /imls_3 /cvoralhist /methhist :CISOSEARCHALL:african americans 1970's">1970-1979</option>
+    <option value="/5985 /cchm /wsuvan1 /imls_2 /imls_3 /cvoralhist /methhist :CISOSEARCHALL:african americans 1980's">1980-1989</option>
+    <option value="/5985 /cchm /wsuvan1 /imls_2 /imls_3 /cvoralhist /methhist :CISOSEARCHALL:african americans 1990's">1990-1999</option>
+    <option value="/5985 /cchm /wsuvan1 /imls_2 /imls_3 /cvoralhist /methhist :CISOSEARCHALL:african americans 2000's">2000-2009</option>
+    </select>
+
+    <input type="submit" value="go" class="button">
+
+    </form>
+
+    <font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+
+    	      <p align="left"><font size="2" face="Verdana, Arial, Helvetica, sans-serif"><strong>OR</strong></font><font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+
+            </font></p>
+
+
+
+    <form method="get" action="http://content.libraries.wsu.edu/cdm4/search.php"><input type="hidden" name="Horde" value="766c1e353d23412786111a7c33d0186b" />
+
+    <input type="hidden" name="CISOOP1" value="all">
+    <input type="hidden" name="CISORESTMP" value="results.php">
+    <input type="hidden" name="CISOVIEWTMP" value="item_viewer.php">
+    <input type="hidden" name="CISOMODE" value="thumb">
+    <input type="hidden" name="CISOGRID" value="thumbnail,A,1;title,A,1;subjec,A,0;descri,200,0;none,A,0;20;title,none,none,none,none">
+    <input type="hidden" name="CISOBIB" value="title,A,1,N;subjec,A,0,N;descri,200,0,N;none,A,0,N;none,A,0,N;20;title,none,none,none,none">
+    <input type="hidden" name="CISOTHUMB" value="20 (4x5);title,none,none,none,none">
+    <input type="hidden" name="CISOTITLE" value="20;title,none,none,none,none">
+    <input type="hidden" name="CISOHIERA" value="20;subjec,title,none,none,none">
+    <input type="hidden" name="CISOSUPPRESS" value="0">
+
+             Search by Subject:
+
+    <select name="CISOPARM">
+    <option value="/5985 /cchm /wsuvan1 /imls_2 /imls_3 /cvoralhist /methhist :SUBJEC:african americans Employment">Employment</option>
+    <option value="/5985 /cchm /wsuvan1 /imls_2 /imls_3 /cvoralhist /methhist :SUBJEC:african americans Children">Children</option>
+    <option value="/5985 /cchm /wsuvan1 /imls_2 /imls_3 /cvoralhist /methhist :SUBJEC:african americans Families">Families</option>
+    <option value="/5985 /cchm /wsuvan1 /imls_2 /imls_3 /cvoralhist /methhist :SUBJEC:african americans civil rights">Civil Rights</option>
+    <option value="/5985 /cchm /wsuvan1 /imls_2 /imls_3 /cvoralhist /methhist :SUBJEC:african americans women">Women</option>
+    <option value="/5985 /cchm /wsuvan1 /imls_2 /imls_3 /cvoralhist /methhist :SUBJEC:african americans Organizations">Organizations</option>
+    <option value="/5985 /cchm /wsuvan1 /imls_2 /imls_3 /cvoralhist /methhist :SUBJEC:african americans pioneers">Pioneers</option>
+    <option value="/5985 /cchm /wsuvan1 /imls_2 /imls_3 /cvoralhist /methhist :SUBJEC:african americans race relations">Race Relations</option>
+    <option value="/5985 /cchm /wsuvan1 /imls_2 /imls_3 /cvoralhist /methhist :SUBJEC:african americans religious communities">Religious Communities</option>
+
+    	  </select>
+
+    <input type="submit" value="go" class="button">
+
+    </form>
+    </div>
+  </main>
+</body>
