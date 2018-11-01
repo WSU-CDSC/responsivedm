@@ -38,154 +38,83 @@ title: CRBEHA Browse/Search
       </p>
 
       <br>
-      <h2>Keywords</h2>
+    <p>Keywords:</p>
       <p>
-        <input id='SearchTerm' type="text" placeholder="Keyword Search" style="height: 34px">
+        <input id='SearchTerm' type="text" value="" style="height: 34px">
         <button type="Submit" class="btn btn-default" type="submit" onclick="crbehaSearch()">Search</button>
       </p>
-      <br />
-      <br>
-      <p><strong>View our list of <a href="/ui/custom/default/collection/default/resources/custompages/crbasin/subheads.php">Subject Headings</a></strong></p>
-      <br>
-      <p><strong>Or use one of these predefined searches:</strong></p>
-      <br />
-      <form method="get" action="http://content.libraries.wsu.edu/cdm4/search.php"><input type="hidden" name="Horde" value="766c1e353d23412786111a7c33d0186b" />
-      <p align="left">
-      <input type="hidden" name="CISOOP1" value="any">
-      <input type="hidden" name="CISORESTMP" value="results.php">
-      <input type="hidden" name="CISOVIEWTMP" value="item_viewer.php">
-      <input type="hidden" name="CISOMODE" value="thumb">
-      <input type="hidden" name="CISOGRID" value="thumbnail,A,1;title,A,1;subjec,A,0;descri,200,0;none,A,0;20;title,none,none,none,none">
-      <input type="hidden" name="CISOBIB" value="title,A,1,N;subjec,A,0,N;descri,200,0,N;none,A,0,N;none,A,0,N;20;title,none,none,none,none">
-      <input type="hidden" name="CISOTHUMB" value="20 (4x5);title,none,none,none,none">
-      <input type="hidden" name="CISOTITLE" value="20;title,none,none,none,none">
-      <input type="hidden" name="CISOHIERA" value="20;subjec,title,none,none,none">
-      <input type="hidden" name="CISOSUPPRESS" value="1"></p>
-        <br />
-      <h2><p>Search by Historical Society:</h2></p>
-      <p align="left">
-      <select name="CISOPARM" value="40">
-      <option value="/wsuvan1 :source:Oregon Historical Society">Oregon Historical Society</option>
-      <option value="/cchm :reposi:Clark County Historical Museum">Clark County Historical Museum</option>
-      <option value="/imls_2 :reposi:Washington State Historical Society">Washington State Historical Society</option>
-      <option value="/5985 /cvoralhist /methhist :CISOSEARCHALL:special collections">MASC WSU- Pullman</option>
-      <option value="/imls_3 :reposi:Idaho State Historical Society">Idaho State Historical Society</option>
-      </select>
-      &nbsp;
-      <input type="submit" value="go" class="button">
+    </b></p>
+    <strong>You may also search for Russian American materials by:</strong></font></P>
 
-      </form></p>
-      <br />
-      <p> <strong><font size="2" face="Verdana, Arial, Helvetica, sans-serif">OR</font></strong></p>
-      <br />
-      <form method="get" action="http://content.libraries.wsu.edu/cdm4/search.php"><input type="hidden" name="Horde" value="766c1e353d23412786111a7c33d0186b" />
-      <p align="left">
-      <input type="hidden" name="CISOOP1" value="all">
-      <input type="hidden" name="CISORESTMP" value="results.php">
-      <input type="hidden" name="CISOVIEWTMP" value="item_viewer.php">
-      <input type="hidden" name="CISOMODE" value="thumb">
-      <input type="hidden" name="CISOGRID" value="thumbnail,A,1;title,A,1;subjec,A,0;descri,200,0;none,A,0;20;title,none,none,none,none">
-      <input type="hidden" name="CISOBIB" value="title,A,1,N;subjec,A,0,N;descri,200,0,N;none,A,0,N;none,A,0,N;20;title,none,none,none,none">
-      <input type="hidden" name="CISOTHUMB" value="20 (4x5);title,none,none,none,none">
-      <input type="hidden" name="CISOTITLE" value="20;title,none,none,none,none">
-      <input type="hidden" name="CISOHIERA" value="20;subjec,title,none,none,none">
-      <input type="hidden" name="CISOSUPPRESS" value="0"></p>
+    Search by Historical Society:</p>
 
-      <h2><p>Search by Material Type:</h2></p>
-      <p align="left">
-      <select name="CISOPARM" value="40">
-      <option value="/5985 /cchm /wsuvan1 /imls_2 /imls_3 /cvoralhist /methhist :type:Text">Text</option>
-      <option value="/5985 /cchm /wsuvan1 /imls_2 /imls_3 /cvoralhist /methhist :type:Photographs">Photographs</option>
-      <option value="/5985 /cchm /wsuvan1 /imls_2 /imls_3 /cvoralhist /methhist :type:Interviews">Oral Histories</option>
-      <option value="/5985 /cchm /wsuvan1 /imls_2 /imls_3 /cvoralhist /methhist :type:Ephemera">Ephemera</option>
-      <option value="/5985 /cchm /wsuvan1 /imls_2 /imls_3 /cvoralhist /methhist :type:artifacts">Artifacts</option>
-      <option value="/5985 /cchm /wsuvan1 /imls_2 /imls_3 /cvoralhist /methhist :type:Video">Video</option>
-      </select>
-      &nbsp;
-      <input type="submit" value="go" class="button">
+    <select id='SearchPathSociety'>
+      <option value="wsuvan1/field/subjec">Oregon Historical Society</option>
+      <option value="cchm/field/subjec">Clark County Historical Museum</option>
+      <option value="imls_2/field/subjec">Washington State Historical Society</option>
+      <option value="5985!cvoralhist!methhis/field/subjec">MASC WSU- Pullman</option>
+      <option value="imls_3/field/subjec">Idaho State Historical Society</option>
+    </select>
+    <button type="Submit" class="btn btn-default" type="submit" onclick="SearchDropDownSociety()">Search
+    </button>
 
-      </form></p>
-      <br />
-      <p align="left"> <strong><font size="2" face="Verdana, Arial, Helvetica, sans-serif">OR</font></strong></p>
+          <p align="left"><font size="2" face="Verdana, Arial, Helvetica, sans-serif"><strong>OR</strong></font>
 
-       <form method="get" action="http://content.libraries.wsu.edu/cdm4/search.php"><input type="hidden" name="Horde" value="766c1e353d23412786111a7c33d0186b" />
+    Search by Material Type:</p>
 
-      <p align="left">
-      <input type="hidden" name="CISOOP1" value="all">
-      <input type="hidden" name="CISORESTMP" value="results.php">
-      <input type="hidden" name="CISOVIEWTMP" value="item_viewer.php">
-      <input type="hidden" name="CISOMODE" value="thumb">
-      <input type="hidden" name="CISOGRID" value="thumbnail,A,1;title,A,1;subjec,A,0;descri,200,0;none,A,0;20;title,none,none,none,none">
-      <input type="hidden" name="CISOBIB" value="title,A,1,N;subjec,A,0,N;descri,200,0,N;none,A,0,N;none,A,0,N;20;title,none,none,none,none">
-      <input type="hidden" name="CISOTHUMB" value="20 (4x5);title,none,none,none,none">
-      <input type="hidden" name="CISOTITLE" value="20;title,none,none,none,none">
-      <input type="hidden" name="CISOHIERA" value="20;subjec,title,none,none,none">
-      <input type="hidden" name="CISOSUPPRESS" value="0"> </p>
-      <br />
-      <h2><p align="left">Search by Date: </h2></p>
-      <br />
-      <p align="left">
-      <select name="CISOPARM" value="40">
-      <option value="/5985 /cchm /wsuvan1 /imls_2 /imls_3 /cvoralhist /methhist :CISOSEARCHALL:1860's">1860-1869</option>
-      <option value="/5985 /cchm /wsuvan1 /imls_2 /imls_3 /cvoralhist /methhist :CISOSEARCHALL:1870's">1870-1879</option>
-      <option value="/5985 /cchm /wsuvan1 /imls_2 /imls_3 /cvoralhist /methhist :CISOSEARCHALL:1880's">1880-1889</option>
-      <option value="/5985 /cchm /wsuvan1 /imls_2 /imls_3 /cvoralhist /methhist :CISOSEARCHALL:1890's">1890-1899</option>
-      <option value="/5985 /cchm /wsuvan1 /imls_2 /imls_3 /cvoralhist /methhist :CISOSEARCHALL:1900's">1900-1909</option>
-      <option value="/5985 /cchm /wsuvan1 /imls_2 /imls_3 /cvoralhist /methhist :CISOSEARCHALL:1910's">1910-1919</option>
-      <option value="/5985 /cchm /wsuvan1 /imls_2 /imls_3 /cvoralhist /methhist :CISOSEARCHALL:1920's">1920-1929</option>
-      <option value="/5985 /cchm /wsuvan1 /imls_2 /imls_3 /cvoralhist /methhist :CISOSEARCHALL:1930's">1930-1939</option>
-      <option value="/5985 /cchm /wsuvan1 /imls_2 /imls_3 /cvoralhist /methhist :CISOSEARCHALL:1940's">1940-1949</option>
-      <option value="/5985 /cchm /wsuvan1 /imls_2 /imls_3 /cvoralhist /methhist :CISOSEARCHALL:1950's">1950-1959</option>
-      <option value="/5985 /cchm /wsuvan1 /imls_2 /imls_3 /cvoralhist /methhist :CISOSEARCHALL:1960's">1960-1969</option>
-      <option value="/5985 /cchm /wsuvan1 /imls_2 /imls_3 /cvoralhist /methhist :CISOSEARCHALL:1970's">1970-1979</option>
-      <option value="/5985 /cchm /wsuvan1 /imls_2 /imls_3 /cvoralhist /methhist :CISOSEARCHALL:1980's">1980-1989</option>
-      <option value="/5985 /cchm /wsuvan1 /imls_2 /imls_3 /cvoralhist /methhist :CISOSEARCHALL:1990's">1990-1999</option>
-      <option value="/5985 /cchm /wsuvan1 /imls_2 /imls_3 /cvoralhist /methhist :CISOSEARCHALL:2000's">2000-2009</option>
-
-      </select>
-      &nbsp;
-      <input type="submit" value="go" class="button">
-
-      </form></p>
+    <select id='SearchPathType'>
+      <option value="5985!cchm!wsuvan1!imls_2!imls_3!cvoralhist!methhist/searchterm/Text! ">Text</option>
+      <option value="/5985!cchm!wsuvan1!imls_2!imls_3!cvoralhist!methhist/searchterm/Photographs! ">Photographs</option>
+      <option value="/5985!cchm!wsuvan1!imls_2!imls_3!cvoralhist!methhist/searchterm/Interviews! ">Oral Histories</option>
+      <option value="/5985!cchm!wsuvan1!imls_2!imls_3!cvoralhist!methhist/searchterm/Ephemera! ">Ephemera</option>
+      <option value="/5985!cchm!wsuvan1!imls_2!imls_3!cvoralhist!methhist/searchterm/Artifacts! ">Artifacts</option>
+      <option <option value="/5985!cchm!wsuvan1!imls_2!imls_3!cvoralhist!methhist/searchterm/Video! ">Video</option>
+    </select>
+    <button type="Submit" class="btn btn-default" type="submit" onclick="SearchDropDownType()">Search
+    </button>
 
 
-      <br />
-      <p align="left"><strong><font size="2" face="Verdana, Arial, Helvetica, sans-serif">OR</font></strong></p>
+          <p align="left"><font size="2" face="Verdana, Arial, Helvetica, sans-serif"><strong>OR</strong></font>
 
-      <form method="get" action="http://content.libraries.wsu.edu/cdm4/search.php"><input type="hidden" name="Horde" value="766c1e353d23412786111a7c33d0186b" />
+          Search by Dates:</p>
 
-      <p align="left">
-      <input type="hidden" name="CISOOP1" value="all">
-      <input type="hidden" name="CISORESTMP" value="results.php">
-      <input type="hidden" name="CISOVIEWTMP" value="item_viewer.php">
-      <input type="hidden" name="CISOMODE" value="thumb">
-      <input type="hidden" name="CISOGRID" value="thumbnail,A,1;title,A,1;subjec,A,0;descri,200,0;none,A,0;20;title,none,none,none,none">
-      <input type="hidden" name="CISOBIB" value="title,A,1,N;subjec,A,0,N;descri,200,0,N;none,A,0,N;none,A,0,N;20;title,none,none,none,none">
-      <input type="hidden" name="CISOTHUMB" value="20 (4x5);title,none,none,none,none">
-      <input type="hidden" name="CISOTITLE" value="20;title,none,none,none,none">
-      <input type="hidden" name="CISOHIERA" value="20;subjec,title,none,none,none">
-      <input type="hidden" name="CISOSUPPRESS" value="0"></p>
-      <br />
-      <h2><p align="left">Search by Subject:</h2></p>
-      <br />
-      <p align="left">
-      <select name="CISOPARM" value="40">
-      <option value="/5985 /cchm /wsuvan1 /imls_2 /imls_3 /cvoralhist /methhist :SUBJEC:Employment">Employment</option>
-      <option value="/5985 /cchm /wsuvan1 /imls_2 /imls_3 /cvoralhist /methhist :SUBJEC:Children">Children</option>
-      <option value="/5985 /cchm /wsuvan1 /imls_2 /imls_3 /cvoralhist /methhist :SUBJEC:Families">Families</option>
-      <option value="/5985 /cchm /wsuvan1 /imls_2 /imls_3 /cvoralhist /methhist :SUBJEC:Civil Rights">Civil Rights</option>
-      <option value="/5985 /cchm /wsuvan1 /imls_2 /imls_3 /cvoralhist /methhist :SUBJEC:Women">Women</option>
-      <option value="/5985 /cchm /wsuvan1 /imls_2 /imls_3 /cvoralhist /methhist :SUBJEC:Organizations">Organizations</option>
-      <option value="/5985 /cchm /wsuvan1 /imls_2 /imls_3 /cvoralhist /methhist :SUBJEC:Pioneers">Pioneers</option>
-      <option value="/5985 /cchm /wsuvan1 /imls_2 /imls_3 /cvoralhist /methhist :SUBJEC:Race Relations">Race Relations</option>
-      <option value="/5985 /cchm /wsuvan1 /imls_2 /imls_3 /cvoralhist /methhist :SUBJEC:Religious Communities">Religious Communities</option>
+    <select id='SearchPathDate'>
+      <option value="5985!cchm!wsuvan1!imls_2!imls_3!cvoralhist!methhist/searchterm/1860 1861 1862 1863 1864 1865 1866 1867 1868 1869! ">1860-1869</option>
+      <option value="5985!cchm!wsuvan1!imls_2!imls_3!cvoralhist!methhist/searchterm/1870 1871 1872 1873 1874 1875 1876 1877 1878 1879! ">1870-1879</option>
+      <option value="5985!cchm!wsuvan1!imls_2!imls_3!cvoralhist!methhist/searchterm/1880 1881 1882 1883 1884 1885 1886 1887 1888 1889! ">1880-1889</option>
+      <option value="5985!cchm!wsuvan1!imls_2!imls_3!cvoralhist!methhist/searchterm/1890 1891 1892 1893 1894 1895 1896 1897 1898 1899! ">1890-1899</option>
+      <option value="5985!cchm!wsuvan1!imls_2!imls_3!cvoralhist!methhist/searchterm/1900 1901 1902 1903 1904 1905 1906 1907 1908 1909! ">1900-1909</option>
+      <option value="5985!cchm!wsuvan1!imls_2!imls_3!cvoralhist!methhist/searchterm/1910 1911 1912 1913 1914 1915 1916 1917 1918 1919! ">1910-1919</option>
+      <option value="5985!cchm!wsuvan1!imls_2!imls_3!cvoralhist!methhist/searchterm/1920 1921 1922 1923 1924 1925 1926 1927 1928 1929! ">1920-1929</option>
+      <option value="5985!cchm!wsuvan1!imls_2!imls_3!cvoralhist!methhist/searchterm/1930 1931 1932 1933 1934 1935 1936 1937 1938 1939! ">1930-1939</option>
+      <option value="5985!cchm!wsuvan1!imls_2!imls_3!cvoralhist!methhist/searchterm/1940 1941 1942 1943 1944 1945 1946 1947 1948 1949! ">1940-1949</option>
+      <option value="5985!cchm!wsuvan1!imls_2!imls_3!cvoralhist!methhist/searchterm/1950 1951 1952 1953 1954 1955 1956 1957 1958 1959! ">1950-1959</option>
+      <option value="5985!cchm!wsuvan1!imls_2!imls_3!cvoralhist!methhist/searchterm/1960 1961 1962 1963 1964 1965 1966 1967 1968 1969! ">1960-1969</option>
+      <option value="5985!cchm!wsuvan1!imls_2!imls_3!cvoralhist!methhist/searchterm/1970 1971 1972 1973 1974 1975 1976 1977 1978 1979! ">1970-1979</option>
+      <option value="5985!cchm!wsuvan1!imls_2!imls_3!cvoralhist!methhist/searchterm/1980 1981 1982 1983 1984 1985 1986 1987 1988 1989! ">1980-1989</option>
+      <option value="5985!cchm!wsuvan1!imls_2!imls_3!cvoralhist!methhist/searchterm/1990 1991 1992 1993 1994 1995 1996 1997 1998 1999! ">1990-1999</option>
+      <option value="5985!cchm!wsuvan1!imls_2!imls_3!cvoralhist!methhist/searchterm/2000 2001 2002 2003 2004 2005 2006 2007 2008 2009! ">2000-2009</option>
+    </select>
+    <button type="Submit" class="btn btn-default" type="submit" onclick="SearchDropDownDate()">Search
+    </button>
 
-      </select>
+          <p align="left"><font size="2" face="Verdana, Arial, Helvetica, sans-serif"><strong>OR</strong></font>
 
-      &nbsp;
-      <input type="submit" value="go" class="button">
+             Search by Subject:</p>
 
-      </form></p>
+    <select id='SearchPathSubject'>
+      <option value="5985!cchm!wsuvan1!imls_2!imls_3!cvoralhist!methhist/searchterm/Employment! ">Employment</option>
+      <option value="/5985!cchm!wsuvan1!imls_2!imls_3!cvoralhist!methhist/searchterm/Children! ">Children</option>
+      <option value="/5985!cchm!wsuvan1!imls_2!imls_3!cvoralhist!methhist/searchterm/Families! ">Families</option>
+      <option value="/5985!cchm!wsuvan1!imls_2!imls_3!cvoralhist!methhist/searchterm/Civil Rights! ">Civil Rights</option>
+      <option value="/5985!cchm!wsuvan1!imls_2!imls_3!cvoralhist!methhist/searchterm/Women! ">Women</option>
+      <option <option value="/5985!cchm!wsuvan1!imls_2!imls_3!cvoralhist!methhist/searchterm/Organizations! ">Organizations</option>
+      <option <option value="/5985!cchm!wsuvan1!imls_2!imls_3!cvoralhist!methhist/searchterm/Pioneers! ">Pioneers</option>
+      <option <option value="/5985!cchm!wsuvan1!imls_2!imls_3!cvoralhist!methhist/searchterm/Race Relations! ">Race Relations</option>
+      <option <option value="/5985!cchm!wsuvan1!imls_2!imls_3!cvoralhist!methhist/searchterm/Religious Communities! ">Religious Communities</option>
+    </select>
+    <button type="Submit" class="btn btn-default" type="submit" onclick="SearchDropDownSubject()">Search
+    </button>
     </div>
   </main>
 </body>
