@@ -1,0 +1,136 @@
+---
+header: true
+footer: true
+title: CRBEHA
+---
+
+<body>
+  <main>
+    <div class="CollectionLanding-maincontentLanding shared-contentContainer">
+      <br>
+    <ul class="nav nav-tabs">
+      <li><a href="/digital/collection/cchm/custom/crbasin">Home</a></li>
+      <li><a href="/digital/collection/cchm/custom/crbasin_background"">Project Background</a></li>
+      <li><a href="/digital/collection/cchm/custom/crbasin_focus">Project Focus</a></li>
+      <li><a href="/digital/collection/cchm/custom/crbasin_browse">Browse/Search</a></li>
+      <li><a href="/digital/collection/cchm/custom/crbasin_tutorials/">Tutorials/Lesson Plans</a></li>
+      <li><a href="/digital/collection/cchm/custom/crbasin_team">Project Team</a></li>
+      <li><a href="/digital/collection/cchm/custom/crbasin_partners">Project Partners</a></li>
+    </ul>
+
+    <table width="50%" border="1" cellpadding="0" bordercolor="#000000" align="center">
+
+      <tr>
+
+        <td><TABLE WIDTH=700 BORDER=0 CELLPADDING=0 CELLSPACING=0>
+
+            <TR>
+
+              <TD> <IMG src="/customizations/collection/cchm/pages/img/ramer.jpg" "AMMER"></TD>
+            </TR>
+
+            <TR>
+
+              <TD COLSPAN=2><p><font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+
+                  <a href="http://content.libraries.wsu.edu/cdm/aa1/collection/cchm">Historical Overview<br>
+
+                  </a></font></p>
+
+              </TD>
+
+            </TR>
+
+          </TABLE> </td>
+
+      </tr>
+
+    </table>
+
+    <!-- End ImageReady Slices -->
+    <table width="700" border="0" cellpadding="5" align="center">
+      <tr>
+        <td><div align="right">
+            <p><font size="2" face="Verdana, Arial, Helvetica, sans-serif"><a href="/digital/collection/cchm/custom/crbasin_browse"><img src="/customizations/collection/cchm/pages/img/back.jpg" width="44" height="21" border="0" alt="Back to Browse the Archive"></a></font></p>
+            <p align="left"><font size="2" face="Verdana, Arial, Helvetica, sans-serif"><strong>Search Russian American materials by Keywords:</strong> </font></p>
+            </div>
+    <p>Keywords:</p>
+      <p>
+        <input id='SearchTerm' type="text" value="Russian Americans" style="height: 34px">
+        <button type="Submit" class="btn btn-default" type="submit" onclick="crbehaSearch()">Search</button>
+      </p>
+    </b></p>
+    <strong>You may also search for Russian American materials by:</strong></font></P>
+
+    Search by Historical Society:</p>
+
+    <select id='SearchPathSociety'>
+      <option value="wsuvan1/searchterm/Russian Americans/field/subjec">Oregon Historical Society</option>
+      <option value="cchm/searchterm/Russian Americans/field/subjec">Clark County Historical Museum</option>
+      <option value="imls_2/searchterm/Russian Americans/field/subjec">Washington State Historical Society</option>
+      <option value="5985!cvoralhist!methhist/searchterm/Russian Americans/field/subjec">MASC WSU- Pullman</option>
+      <option value="imls_3/searchterm/Russian Americans/field/subjec">Idaho State Historical Society</option>
+    </select>
+    <button type="Submit" class="btn btn-default" type="submit" onclick="SearchDropDownSociety()">Search
+    </button>
+
+          <p align="left"><font size="2" face="Verdana, Arial, Helvetica, sans-serif"><strong>OR</strong></font>
+
+    Search by Material Type:</p>
+
+    <select id='SearchPathType'>
+      <option value="5985!cchm!wsuvan1!imls_2!imls_3!cvoralhist!methhist/searchterm/Text!Russian Americans">Text</option>
+      <option value="/5985!cchm!wsuvan1!imls_2!imls_3!cvoralhist!methhist/searchterm/Photographs!Russian Americans">Photographs</option>
+      <option value="/5985!cchm!wsuvan1!imls_2!imls_3!cvoralhist!methhist/searchterm/Interviews!Russian Americans">Oral Histories</option>
+      <option value="/5985!cchm!wsuvan1!imls_2!imls_3!cvoralhist!methhist/searchterm/Ephemera!Russian Americans">Ephemera</option>
+      <option value="/5985!cchm!wsuvan1!imls_2!imls_3!cvoralhist!methhist/searchterm/Artifacts!Russian Americans">Artifacts</option>
+      <option <option value="/5985!cchm!wsuvan1!imls_2!imls_3!cvoralhist!methhist/searchterm/Video!Russian Americans">Video</option>
+    </select>
+    <button type="Submit" class="btn btn-default" type="submit" onclick="SearchDropDownType()">Search
+    </button>
+
+
+          <p align="left"><font size="2" face="Verdana, Arial, Helvetica, sans-serif"><strong>OR</strong></font>
+
+          Search by Dates:</p>
+
+    <select id='SearchPathDate'>
+      <option value="5985!cchm!wsuvan1!imls_2!imls_3!cvoralhist!methhist/searchterm/1860 1861 1862 1863 1864 1865 1866 1867 1868 1869!Russian American">1860-1869</option>
+      <option value="5985!cchm!wsuvan1!imls_2!imls_3!cvoralhist!methhist/searchterm/1870 1871 1872 1873 1874 1875 1876 1877 1878 1879!Russian American">1870-1879</option>
+      <option value="5985!cchm!wsuvan1!imls_2!imls_3!cvoralhist!methhist/searchterm/1880 1881 1882 1883 1884 1885 1886 1887 1888 1889!Russian American">1880-1889</option>
+      <option value="5985!cchm!wsuvan1!imls_2!imls_3!cvoralhist!methhist/searchterm/1890 1891 1892 1893 1894 1895 1896 1897 1898 1899!Russian American">1890-1899</option>
+      <option value="5985!cchm!wsuvan1!imls_2!imls_3!cvoralhist!methhist/searchterm/1900 1901 1902 1903 1904 1905 1906 1907 1908 1909!Russian American">1900-1909</option>
+      <option value="5985!cchm!wsuvan1!imls_2!imls_3!cvoralhist!methhist/searchterm/1910 1911 1912 1913 1914 1915 1916 1917 1918 1919!Russian American">1910-1919</option>
+      <option value="5985!cchm!wsuvan1!imls_2!imls_3!cvoralhist!methhist/searchterm/1920 1921 1922 1923 1924 1925 1926 1927 1928 1929!Russian American">1920-1929</option>
+      <option value="5985!cchm!wsuvan1!imls_2!imls_3!cvoralhist!methhist/searchterm/1930 1931 1932 1933 1934 1935 1936 1937 1938 1939!Russian American">1930-1939</option>
+      <option value="5985!cchm!wsuvan1!imls_2!imls_3!cvoralhist!methhist/searchterm/1940 1941 1942 1943 1944 1945 1946 1947 1948 1949!Russian American">1940-1949</option>
+      <option value="5985!cchm!wsuvan1!imls_2!imls_3!cvoralhist!methhist/searchterm/1950 1951 1952 1953 1954 1955 1956 1957 1958 1959!Russian American">1950-1959</option>
+      <option value="5985!cchm!wsuvan1!imls_2!imls_3!cvoralhist!methhist/searchterm/1960 1961 1962 1963 1964 1965 1966 1967 1968 1969!Russian American">1960-1969</option>
+      <option value="5985!cchm!wsuvan1!imls_2!imls_3!cvoralhist!methhist/searchterm/1970 1971 1972 1973 1974 1975 1976 1977 1978 1979!Russian American">1970-1979</option>
+      <option value="5985!cchm!wsuvan1!imls_2!imls_3!cvoralhist!methhist/searchterm/1980 1981 1982 1983 1984 1985 1986 1987 1988 1989!Russian American">1980-1989</option>
+      <option value="5985!cchm!wsuvan1!imls_2!imls_3!cvoralhist!methhist/searchterm/1990 1991 1992 1993 1994 1995 1996 1997 1998 1999!Russian American">1990-1999</option>
+      <option value="5985!cchm!wsuvan1!imls_2!imls_3!cvoralhist!methhist/searchterm/2000 2001 2002 2003 2004 2005 2006 2007 2008 2009!Russian American">2000-2009</option>
+    </select>
+    <button type="Submit" class="btn btn-default" type="submit" onclick="SearchDropDownDate()">Search
+    </button>
+
+          <p align="left"><font size="2" face="Verdana, Arial, Helvetica, sans-serif"><strong>OR</strong></font>
+
+             Search by Subject:</p>
+
+    <select id='SearchPathSubject'>
+      <option value="5985!cchm!wsuvan1!imls_2!imls_3!cvoralhist!methhist/searchterm/Employment!Russian Americans">Employment</option>
+      <option value="/5985!cchm!wsuvan1!imls_2!imls_3!cvoralhist!methhist/searchterm/Children!Russian Americans">Children</option>
+      <option value="/5985!cchm!wsuvan1!imls_2!imls_3!cvoralhist!methhist/searchterm/Families!Russian Americans">Families</option>
+      <option value="/5985!cchm!wsuvan1!imls_2!imls_3!cvoralhist!methhist/searchterm/Civil Rights!Russian Americans">Civil Rights</option>
+      <option value="/5985!cchm!wsuvan1!imls_2!imls_3!cvoralhist!methhist/searchterm/Women!Russian Americans">Women</option>
+      <option <option value="/5985!cchm!wsuvan1!imls_2!imls_3!cvoralhist!methhist/searchterm/Organizations!Russian Americans">Organizations</option>
+      <option <option value="/5985!cchm!wsuvan1!imls_2!imls_3!cvoralhist!methhist/searchterm/Pioneers!Russian Americans">Pioneers</option>
+      <option <option value="/5985!cchm!wsuvan1!imls_2!imls_3!cvoralhist!methhist/searchterm/Race Relations!Russian Americans">Race Relations</option>
+      <option <option value="/5985!cchm!wsuvan1!imls_2!imls_3!cvoralhist!methhist/searchterm/Religious Communities!Russian Americans">Religious Communities</option>
+    </select>
+    <button type="Submit" class="btn btn-default" type="submit" onclick="SearchDropDownSubject()">Search
+    </button>
+    </div>
+  </main>
+</body>
