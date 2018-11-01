@@ -26,3 +26,8 @@ function SearchDropDownSubject() {
     var input = document.getElementById('SearchPathSubject').value
     window.open("http://cdm16866.contentdm.oclc.org/digital/search/collection/" + input + "/field/subject!all/mode/all!all/conn/and!and","_self");
 }
+
+function SearchDropDownDate() {
+    var input = document.getElementById('SearchPathDate').value
+    window.open("http://cdm16866.contentdm.oclc.org/digital/search/collection/" + input + "/field/all!all/mode/any!all/conn/and!and/cosuppress/","_self");
+}
