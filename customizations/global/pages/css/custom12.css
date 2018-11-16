@@ -15,6 +15,14 @@ body {
     background-color: #5e6a71;
 }
 
+.Header-headerMenuLinks li a:focus,.Header-headerMenuLinks li a:hover {
+ color:#fff!important;
+ background-color:white!important;
+}
+.Header-headerMenuLinks li a:hover h3 {
+ color:gray!important
+}
+
 .Header-logoNameContainer {
     background-color: #981e32;
     height:70;
