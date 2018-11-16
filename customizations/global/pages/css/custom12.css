@@ -76,6 +76,17 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+
+}
+
+@media screen and (max-width: 992px) {
+    .centered { width: 220px;
+    }
+}
+
+@media screen and (max-width: 763px) {
+    .centered { width: 230px;
+    }
 }
 
 .cardbutton {
