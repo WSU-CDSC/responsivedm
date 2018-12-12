@@ -129,7 +129,7 @@ body {
 }
 
 .intro-block {
-    height: 120px;
+    min-height: 120px;
     background: #E0E0E0;
     border-bottom: 5px;
     border-bottom-style: solid;
