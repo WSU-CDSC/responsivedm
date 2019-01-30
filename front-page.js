@@ -1,3 +1,5 @@
+// search functions used on main landing page
+
 function imageSearch() {
     var input = document.getElementById('ImageSearchTerm').value
     window.open("/digital/search/searchterm/" + input + "!image" + "/field/all!type/mode/all!all/conn/and!and/cosuppress/","_self");
@@ -6,6 +8,8 @@ function imageSearch() {
 function allSearch() {
     window.open("/digital/search");
 }
+
+// functions for searching CRBEHA
 
 function crbehaSearch() {
     var input = document.getElementById('SearchTerm').value
@@ -17,6 +21,7 @@ function crbehaSearch2() {
     window.open("/digital/search/collection/5985!cchm!wsuvan1!imls_2!imls_3!cvoralhist!methhist/searchterm/" + input + "/field/all/mode/all/conn/and/cosuppress/","_self");
 }
 
+// functions for collections that require searching across multiple CDM 'collections' e.g. CRBEHA
 
 function SearchDropDownSociety() {
     var input = document.getElementById('SearchPathSociety').value
@@ -36,4 +41,24 @@ function SearchDropDownSubject() {
 function SearchDropDownDate() {
     var input = document.getElementById('SearchPathDate').value
     window.open("/digital/search/collection/" + input + "/field/all!all/mode/any!all/conn/and!and/cosuppress/","_self");
+}
+
+// functions for limiting advanced search collections
+
+function checkCollection_A() {
+  if ( window.location.href.split('/collection/')[1] != undefined && window.location.href.split('/collection/')[1].split('/')[1] != undefined ) {
+  var collectionToSearch = window.location.href.split('/collection/')[1].split('/')[0];
+  document.getElementsByClassName("btn-see-more-less")[0].click();
+  window.setTimeout(checkCollection_B,1000)
+  }
+}
+
+function checkCollection_B() {
+  var collectionToSearch = window.location.href.split('/collection/')[1].split('/')[0];
+  if ( document.getElementsByName("selectAll")[0].checked) {
+    document.getElementsByName("selectAll")[0].click();
+    document.getElementsByName(collectionToSearch)[0].click();
+    document.querySelectorAll("[data-id='updateBtn']")[0].click();
+  }
+  document.getElementsByClassName("btn-see-more-less")[0].click();
 }
