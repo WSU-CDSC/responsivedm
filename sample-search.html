@@ -1,0 +1,72 @@
+---
+header: true
+footer: true
+title: CRBEHA
+---
+
+<body>
+  <main>
+    <div class="CollectionLanding-maincontentLanding shared-contentContainer">
+
+      <p align="left"><font size="2" face="Verdana, Arial, Helvetica, sans-serif"><strong>Sample Search Inputs</strong></font></p>
+
+      <p>Search by type:</p>
+      <select id='SingleSearchTypeInput'>
+        <option>Text</option>
+        <option>Photographs</option>
+        <option>Oral Histories</option>
+        <option>Ephemera</option>
+        <option>Artifacts</option>
+        <option >Video</option>
+      </select>
+      <button type="Submit" class="btn btn-default" type="submit" onclick="SingleSearchType()">Search
+      </button>
+      <br>
+      <br>
+      <p>Search by subject:</p>
+      <select id='SingleSearchSubjectInput'>
+        <option>Employment</option>
+        <option>Children</option>
+        <option>Families</option>
+        <option>Civil Rights</option>
+        <option>Women</option>
+        <option>Organizations</option>
+        <option>Pioneers</option>
+        <option>Race Relations</option>
+        <option>Religious Communities</option>
+      </select>
+      <button type="Submit" class="btn btn-default" type="submit" onclick="SingleSearchSubject()">Search
+      </button>
+
+      <br>
+      <br>
+      <p>Search by dates:</p>
+      <select id='SingleSearchDateInput'>
+        <option>1860-1869</option>
+        <option>1870-1879</option>
+        <option>1880-1889</option>
+        <option>1890-1899</option>
+        <option>1900-1909</option>
+        <option>1910-1919</option>
+        <option>1920-1929</option>
+        <option>1930-1939</option>
+        <option>1940-1949</option>
+        <option>1950-1959</option>
+        <option>1960-1969</option>
+        <option>1970-1979</option>
+        <option>1980-1989</option>
+        <option>1990-1999</option>
+        <option>2000-2009</option>
+      </select>
+      <button type="Submit" class="btn btn-default" type="submit" onclick="SingleSearchDate()">Search
+      </button>
+      <br>
+      <br>
+      <p>Search by keyword:</p>
+      <p>
+        <input id='SingleSearchKeywordInput' type="text" value="" style="height: 34px">
+        <button type="Submit" class="btn btn-default" type="submit" onclick="SingleSearchKeyword()">Search</button>
+      </p>
+    </div>
+  </main>
+</body>
