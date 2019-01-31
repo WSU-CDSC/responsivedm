@@ -43,6 +43,26 @@ function SearchDropDownDate() {
     window.open("/digital/search/collection/" + input + "/field/all!all/mode/any!all/conn/and!and/cosuppress/","_self");
 }
 
+// functions for custom searches in pages (single collection)
+
+function SingleSearchType(){
+    var collectionToSearch = window.location.href.split('/collection/')[1].split('/')[0];
+    var input = document.getElementById('SearchPathType').value
+    window.open("/digital/collection/" + collectionToSearch + "/search/searchterm/" + input + "/field/type/mode/all/conn/and/order/nosort/ad/asc","_self");
+}
+
+function SingleSearchDate(){
+    var collectionToSearch = window.location.href.split('/collection/')[1].split('/')[0];
+    var input = document.getElementById('SearchPathDate').value
+    window.open("/digital/collection/" + collectionToSearch + "/search/searchterm/" + input + "/field/type/mode/all/conn/and/order/nosort/ad/asc","_self");
+}
+
+function SingleSearchSubject(){
+    var collectionToSearch = window.location.href.split('/collection/')[1].split('/')[0];
+    var input = document.getElementById('SearchPathSubject').value
+    window.open("/digital/collection/" + collectionToSearch + "/search/searchterm/" + input + "/field/type/mode/all/conn/and/order/nosort/ad/asc","_self");
+}
+
 // functions for limiting advanced search collections
 
 function checkCollection_A() {
