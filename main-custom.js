@@ -107,15 +107,27 @@ function SingleSearchDate(){
 
 // functions for limiting advanced search collections
 
+window.addEventListener("load", function(event) {
+    console.log('loaded')
+    advancedListener()
+  })
+
+function advancedListener(){
+    document.getElementsByClassName("SimpleSearch-headerAdvancedSearchButtonLink")[0].addEventListener("click", function(){
+    window.setTimeout(checkCollection_A,800)
+    }); 
+}
+
 function checkCollection_A() {
   if ( window.location.href.split('/collection/')[1] != undefined && window.location.href.split('/collection/')[1].split('/')[1] != undefined ) {
   var collectionToSearch = window.location.href.split('/collection/')[1].split('/')[0];
   document.getElementsByClassName("btn-see-more-less")[0].click();
-  window.setTimeout(checkCollection_B,1000)
+  checkCollection_B()
   }
 }
 
 function checkCollection_B() {
+    console.log('seeking')
   var collectionToSearch = window.location.href.split('/collection/')[1].split('/')[0];
   if ( document.getElementsByName("selectAll")[0].checked) {
     document.getElementsByName("selectAll")[0].click();
