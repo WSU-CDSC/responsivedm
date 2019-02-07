@@ -108,11 +108,27 @@ function SingleSearchDate(){
 // functions for limiting advanced search collections
 
 window.addEventListener("load", function(event) {
-    console.log('loaded')
+    findAdvancedSearch()
+})
+
+function findAdvancedSearch(){
+  if (typeof document.getElementsByClassName("SimpleSearch-headerAdvancedSearchButtonLink")[0] == 'object') {
     advancedListener()
-  })
+  }
+  else {
+    window.setTimeout(findAdvancedSearch,200)
+  }
+}
+
+function findSeeAll(){
+  if (typeof document.getElementsByClassName("btn-see-more-less")[0] != 'object') {
+    console.log('button not loaded')
+    window.setTimeout(findSeeAll,200)
+  }
+}
 
 function advancedListener(){
+    console.log('loaded')
     document.getElementsByClassName("SimpleSearch-headerAdvancedSearchButtonLink")[0].addEventListener("click", function(){
     window.setTimeout(checkCollection_A,800)
     }); 
@@ -121,6 +137,7 @@ function advancedListener(){
 function checkCollection_A() {
   if ( window.location.href.split('/collection/')[1] != undefined && window.location.href.split('/collection/')[1].split('/')[1] != undefined ) {
   var collectionToSearch = window.location.href.split('/collection/')[1].split('/')[0];
+  findSeeAll()
   document.getElementsByClassName("btn-see-more-less")[0].click();
   checkCollection_B()
   }
@@ -128,11 +145,17 @@ function checkCollection_A() {
 
 function checkCollection_B() {
     console.log('seeking')
-  var collectionToSearch = window.location.href.split('/collection/')[1].split('/')[0];
+  var collectionToSearch = [window.location.href.split('/collection/')[1].split('/')[0]];
+  if (collectionToSearch[0] == 'cchm') {
+    collectionToSearch = [ 'cchm','5985','wsuvan1','imls_2','imls_3','cvoralhist','methhist']
+  }
   if ( document.getElementsByName("selectAll")[0].checked) {
     document.getElementsByName("selectAll")[0].click();
-    document.getElementsByName(collectionToSearch)[0].click();
+    collectionToSearch.forEach(function(collection) {
+      document.getElementsByName(collection)[0].click();
+    });
     document.querySelectorAll("[data-id='updateBtn']")[0].click();
   }
   document.getElementsByClassName("btn-see-more-less")[0].click();
 }
+
