@@ -139,7 +139,7 @@ function checkCollection_A() {
   var collectionToSearch = window.location.href.split('/collection/')[1].split('/')[0];
   findSeeAll()
   document.getElementsByClassName("btn-see-more-less")[0].click();
-  checkCollection_B()
+  window.setTimeout(checkCollection_B,800)
   }
 }
 
