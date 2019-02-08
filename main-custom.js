@@ -107,7 +107,7 @@ function SingleSearchDate(){
 
 // functions for limiting advanced search collections
 
-window.addEventListener("load", function(event) {
+window.addEventListener("DOMContentLoaded", function(event) {
     findAdvancedSearch()
 })
 
