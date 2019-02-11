@@ -63,6 +63,12 @@ function SingleSearchSubject(){
     window.open("/digital/collection/" + collectionToSearch + "/search/searchterm/" + input + "/field/subject/mode/all/conn/and/order/nosort/ad/asc","_self");
 }
 
+function SingleSearchCoverage(){
+    var collectionToSearch = window.location.href.split('/collection/')[1].split('/')[0];
+    var input = document.getElementById('SingleSearchCoverageInput').value
+    window.open("/digital/collection/" + collectionToSearch + "/search/searchterm/" + input + "/field/coverage/mode/all/conn/and/order/nosort/ad/asc","_self");
+}
+
 function SingleSearchDate(){
     var collectionToSearch = window.location.href.split('/collection/')[1].split('/')[0];
     var rawInput = document.getElementById('SingleSearchDateInput').value
