@@ -91,9 +91,9 @@ function SingleSearchDate(){
     } else if (rawInput == '1970-1979'){
          var parsedInput = '1970 1971 1972 1973 1974 1975 1976 1977 1978 1979'
     } else if (rawInput == '1980-1989'){
-         var parsedInput = '1870 1871 1872 1873 1874 1875 1876 1877 1878 1879'
-    } else if (rawInput == '1990-1999'){
          var parsedInput = '1980 1981 1982 1983 1984 1985 1986 1987 1988 1989'
+    } else if (rawInput == '1990-1999'){
+         var parsedInput = '1990 1991 1992 1993 1994 1995 1996 1997 1998 1999'
     } else if (rawInput == '2000-2009'){
          var parsedInput = '2000 2001 2002 2003 2004 2005 2006 2007 2008 2009'
     } else if (rawInput == '2010-2019'){
@@ -121,9 +121,28 @@ function findAdvancedSearch(){
 }
 
 function findSeeAll(){
-  if (typeof document.getElementsByClassName("btn-see-more-less")[0] != 'object') {
+  if (typeof document.getElementsByClassName("btn-see-more-less")[0] == 'object') {
+    document.getElementsByClassName("btn-see-more-less")[0].click();
+  }
+  else {
     console.log('button not loaded')
     window.setTimeout(findSeeAll,200)
+  }
+}
+
+function findCollectionToSearch(){
+  if (typeof document.getElementsByName(window.location.href.split('/collection/')[1].split('/')) != 'object') {
+    var collectionToSearch = [window.location.href.split('/collection/')[1].split('/')[0]];
+    if (collectionToSearch[0] == 'cchm') {
+      collectionToSearch = [ 'cchm','5985','wsuvan1','imls_2','imls_3','cvoralhist','methhist']
+    }
+    collectionToSearch.forEach(function(collection) {
+      document.getElementsByName(collection)[0].click();
+    })
+  }
+  else {
+    console.log('looping')
+    window.setTimeout(findCollectionToSearch,200)
   }
 }
 
@@ -138,22 +157,15 @@ function checkCollection_A() {
   if ( window.location.href.split('/collection/')[1] != undefined && window.location.href.split('/collection/')[1].split('/')[1] != undefined ) {
   var collectionToSearch = window.location.href.split('/collection/')[1].split('/')[0];
   findSeeAll()
-  document.getElementsByClassName("btn-see-more-less")[0].click();
-  window.setTimeout(checkCollection_B,800)
+  checkCollection_B()
   }
 }
 
 function checkCollection_B() {
-    console.log('seeking')
-  var collectionToSearch = [window.location.href.split('/collection/')[1].split('/')[0]];
-  if (collectionToSearch[0] == 'cchm') {
-    collectionToSearch = [ 'cchm','5985','wsuvan1','imls_2','imls_3','cvoralhist','methhist']
-  }
+  console.log('seeking')
   if ( document.getElementsByName("selectAll")[0].checked) {
     document.getElementsByName("selectAll")[0].click();
-    collectionToSearch.forEach(function(collection) {
-      document.getElementsByName(collection)[0].click();
-    });
+    findCollectionToSearch()
     document.querySelectorAll("[data-id='updateBtn']")[0].click();
   }
   document.getElementsByClassName("btn-see-more-less")[0].click();
