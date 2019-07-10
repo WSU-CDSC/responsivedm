@@ -48,25 +48,33 @@ function SearchDropDownDate() {
 function SingleSearchKeyword(){
     var collectionToSearch = window.location.href.split('/collection/')[1].split('/')[0];
     var input = document.getElementById('SingleSearchKeywordInput').value
-    window.open("/digital/collection/" + collectionToSearch + "/search/searchterm/" + input + "/field/all/mode/all/conn/and/order/nosort/ad/asc","_self");
+    if (input !== "") {
+      window.open("/digital/collection/" + collectionToSearch + "/search/searchterm/" + input + "/field/all/mode/all/conn/and/order/nosort/ad/asc","_self");
+    }
 }
 
 function SingleSearchType(){
     var collectionToSearch = window.location.href.split('/collection/')[1].split('/')[0];
     var input = document.getElementById('SingleSearchTypeInput').value
-    window.open("/digital/collection/" + collectionToSearch + "/search/searchterm/" + input + "/field/type/mode/all/conn/and/order/nosort/ad/asc","_self");
+    if (input !== "") {
+      window.open("/digital/collection/" + collectionToSearch + "/search/searchterm/" + input + "/field/type/mode/all/conn/and/order/nosort/ad/asc","_self");
+    }
 }
 
 function SingleSearchSubject(){
     var collectionToSearch = window.location.href.split('/collection/')[1].split('/')[0];
     var input = document.getElementById('SingleSearchSubjectInput').value
-    window.open("/digital/collection/" + collectionToSearch + "/search/searchterm/" + input + "/field/subject/mode/all/conn/and/order/nosort/ad/asc","_self");
+    if (input !== "") {
+      window.open("/digital/collection/" + collectionToSearch + "/search/searchterm/" + input + "/field/subject/mode/all/conn/and/order/nosort/ad/asc","_self");
+    }
 }
 
 function SingleSearchCoverage(){
     var collectionToSearch = window.location.href.split('/collection/')[1].split('/')[0];
     var input = document.getElementById('SingleSearchCoverageInput').value
-    window.open("/digital/collection/" + collectionToSearch + "/search/searchterm/" + input + "/field/coverage/mode/all/conn/and/order/nosort/ad/asc","_self");
+    if (input !== "") {
+      window.open("/digital/collection/" + collectionToSearch + "/search/searchterm/" + input + "/field/coverage/mode/all/conn/and/order/nosort/ad/asc","_self");
+    }
 }
 
 function SingleSearchDate(){
