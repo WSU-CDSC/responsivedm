@@ -145,7 +145,7 @@ function findSeeAll(){
 }
 
 function findCollectionToSearch(){
-  if (typeof document.getElementsByName(window.location.href.split('/collection/')[1].split('/')) != 'object') {
+  if (typeof document.getElementsByName(window.location.href.split('/collection/')[1].split('/')) != 'undefined') {
     var collectionToSearch = [window.location.href.split('/collection/')[1].split('/')[0]];
     if (collectionToSearch[0] == 'cchm') {
       collectionToSearch = [ 'cchm','5985','wsuvan1','imls_2','imls_3','cvoralhist','methhist']
@@ -155,8 +155,14 @@ function findCollectionToSearch(){
     })
   }
   else {
-    console.log('looping')
-    window.setTimeout(findCollectionToSearch,200)
+    if (typeof loopLimiter == 'undefined') {
+      loopLimiter = 1
+    }
+    if (loopLimiter < 100 ) {
+      console.log('looping')
+      window.setTimeout(findCollectionToSearch,200)
+      loopLimiter = loopLimiter + 1
+    }
   }
 }
 
