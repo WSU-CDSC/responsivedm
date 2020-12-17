@@ -8,6 +8,28 @@ function imageSearch() {
 function allSearch() {
     window.open("/digital/search");
 }
+//function to clone search button at the top and bottom of ladning pag
+(function() {
+  'use strict';
+
+  let globalScope = true;
+  // set to true to run this recipe for the entire site
+  let collectionScope = [
+    ''
+  ];
+  // list the collection aliases to which the recipe should apply
+
+  ['cdm-collection-landing-page:ready','cdm-collection-landing-page:update'].forEach(function(e) {
+    document.addEventListener(e, function(e){
+      if (globalScope || collectionScope.includes(e.detail.collectionId)) {
+        const previousDiv = document.getElementsByClassName('grayDividerLine')[0];
+        const clonedBrowseButton = document.getElementsByClassName('CollectionLanding-landingBrowseButton')[0].parentNode.cloneNode(true);
+        previousDiv.insertAdjacentElement('afterend',clonedBrowseButton);
+      }
+    });
+  });
+
+})();
 
 // functions for searching CRBEHA
 
@@ -114,7 +136,7 @@ function SingleSearchDate(){
          var parsedInput = '2010 2011 2012 2013 2014 2015 2016 2017 2018 2019'
     } else if (rawInput == '2020-2029'){
          var parsedInput = '2020 2021 2022 2023 2024 2025 2026 2027 2028 2029'
-    } 
+    }
 
     window.open("/digital/collection/" + collectionToSearch + "/search/searchterm/" + parsedInput + "/field/date/mode/any/conn/and/order/nosort/ad/asc","_self");
 }
@@ -171,7 +193,7 @@ function advancedListener(){
     console.log('loaded')
     document.getElementsByClassName("SimpleSearch-headerAdvancedSearchButtonLink")[0].addEventListener("click", function(){
     window.setTimeout(checkCollection_A,800)
-    }); 
+    });
 }
 
 function checkCollection_A() {
@@ -191,4 +213,3 @@ function checkCollection_B() {
   }
   document.getElementsByClassName("btn-see-more-less")[0].click();
 }
-
