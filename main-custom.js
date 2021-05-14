@@ -8,7 +8,7 @@ function imageSearch() {
 function allSearch() {
     window.open("/digital/search");
 }
-//function to clone search button at the top and bottom of ladning pag
+//function to clone search button at the top and bottom of collection landing pages
 (function() {
   'use strict';
 
