@@ -8,6 +8,13 @@ function imageSearch() {
 function allSearch() {
     window.open("/digital/search");
 }
+
+function SendFeedback(){
+    var CurrentLocation = window.location;
+         window.location = "https://libraries.wsu.edu/masc/digital-collections-feedback?ref="+CurrentLocation;
+}
+
+
 //function to clone search button at the top and bottom of collection landing pages
 (function() {
   'use strict';
@@ -30,6 +37,174 @@ function allSearch() {
   });
 
 })();
+//function for twitter follow button but will be link to feedback form soon. Testing
+
+  (function () {
+  'use strict';
+
+  function loadScript(src) {
+    return new Promise(function(resolve, reject) {
+      const script = document.createElement('script');
+      script.src = src;
+      script.onload = resolve;
+      script.onerror = reject;
+      document.head.appendChild(script);
+    });
+  }
+
+  function insertTwitterFollowButton(screenName){
+    const twitBtn = document.getElementsByClassName('twitter-follow-button-rendered');
+    if (twitBtn == null || twitBtn.length === 0) {
+      const linkContainer = document.createElement('div');
+      linkContainer.className = 'text-center';
+    //  linkContainer.innerHTML = '<a href="https://twitter.com/' + screenName + '" class="twitter-follow-button" data-show-count="false" data-show-screen-name="true" data-size="large">Follow WSU Libraries</a>';
+       linkContainer.innerHTML = '<a href="javascript:SendFeedback()" class="twitter-follow-button" data-show-count="false" data-show-screen-name="true" data-size="large">Feedback</a>';
+      Array.from(document.querySelectorAll('.Footer-footerContainer'))
+        .forEach(el => {
+          el.appendChild(linkContainer.cloneNode(true));
+        });
+
+      loadScript('https://platform.twitter.com/widgets.js');
+    }
+  }
+
+  const twitterScreenName = 'WSULibraries';
+
+  document.addEventListener('cdm-home-page:ready', function() {
+    insertTwitterFollowButton(twitterScreenName);
+  });
+  document.addEventListener('cdm-about-page:ready', function() {
+    insertTwitterFollowButton(twitterScreenName);
+  });
+  document.addEventListener('cdm-search-page:ready', function() {
+    insertTwitterFollowButton(twitterScreenName);
+  });
+  document.addEventListener('cdm-collection-page:ready', function() {
+    insertTwitterFollowButton(twitterScreenName);
+  });
+  document.addEventListener('cdm-advanced-search-page:ready', function() {
+    insertTwitterFollowButton(twitterScreenName);
+  });
+  document.addEventListener('cdm-item-page:ready', function() {
+    insertTwitterFollowButton(twitterScreenName);
+  });
+  document.addEventListener('cdm-custom-page:ready', function() {
+    insertTwitterFollowButton(twitterScreenName);
+  });
+
+})();
+//PDF button download (changing this to a item feedback link...)
+(function() {
+    'use strict';
+
+    // helper function to extract archival download link of current item
+    function buildPDFDownloadLink(collection, item) {
+      return fetch('/digital/api/collections/' + collection + '/items/' + item + '/false')
+        .then(function(response) {
+          // return API info about item as JSON
+          return response.json();
+        })
+        .then(function(json) {
+          // if print PDF exists get download URL
+          console.log('has print pdf: ' + json.hasPrintPDF);
+
+          if (json.hasPrintPDF == true) {
+            let printLink = json.downloadParentUri;
+            console.log('parent uri: ' + json.downloadParentUri);
+            return printLink;
+          } else {
+            let printLink = false;
+            return printLink;
+          }
+        })
+        .catch(function(error) {
+          console.log('No print PDF link found: ' + error);
+        })
+    }
+
+    let downloadPDFButton = {
+      insert: function(printLink) {
+        let button = document.createElement('div');
+        button.className = 'btn-group btn-group-default print-pdf-button';
+
+        let buttonAnchor = document.createElement('a');
+        buttonAnchor.title = "Download Full PDF";
+        buttonAnchor.href = printLink;
+        buttonAnchor.className = 'cdm-btn btn btn-primary';
+        buttonAnchor.target = '_self';
+
+        let buttonIcon = document.createElement('span');
+        buttonIcon.className = 'fa fa-file-pdf-o fa-2x';
+
+        buttonAnchor.appendChild(buttonIcon);
+        button.appendChild(buttonAnchor);
+
+        Array.from(document.querySelectorAll('.ItemOptions-itemOptions>.btn-toolbar'))
+          .forEach(el => {
+//            el.appendChild(button.cloneNode(true)); // insert button far right
+            el.prepend(button.cloneNode(true)); // insert button far left
+          });
+      },
+      remove: function() {
+        Array.from(document.querySelectorAll('.print-pdf-button'))
+          .forEach(el => {
+            if (el && el.parentElement) {
+              el.parentElement.removeChild(el);
+            }
+          });
+      }
+    }
+
+    // locates download link and replaces the target URL
+    function removeExistingPDFDownload() {
+      Array.from(document.querySelectorAll('li > a[data-metrics-event-label*="download:All"]'))
+        .forEach(el => {
+          if (el && el.parentNode) {
+            el.parentNode.remove();
+          }
+        });
+    }
+
+  //helper function to sequence fetch promises
+  function insertPrintPDFDownload(collection, item) {
+    buildPDFDownloadLink(collection, item)
+      .then(function(response) {
+        if (response) {
+          downloadPDFButton.insert(response);
+          removeExistingPDFDownload();
+        }
+      });
+  }
+
+  let globalScope = true; // set to true for global scripts or false for collection-constrained scripts
+  let collectionScope = [ // list all collection aliases that should trigger this script
+  ];
+
+
+  document.addEventListener('cdm-item-page:ready', function(e) {
+    let collection = e.detail.collectionId;
+    if (globalScope || collectionScope.includes(collection)) {
+      insertPrintPDFDownload(collection, e.detail.itemId);
+    }
+  });
+
+  document.addEventListener('cdm-item-page:update', function(e) {
+    let collection = e.detail.collectionId;
+    if (globalScope || collectionScope.includes(collection)) {
+      downloadPDFButton.remove();
+      insertPrintPDFDownload(collection, e.detail.itemId);
+    }
+  });
+
+  document.addEventListener('cdm-item-page:leave', function(e) {
+    let collection = e.detail.collectionId;
+    if (globalScope || collectionScope.includes(collection)) {
+      downloadPDFButton.remove();
+    }
+  });
+
+})();
+
 
 //event logging debug script from  OCLC
 
