@@ -8,7 +8,7 @@ function imageSearch() {
 function allSearch() {
     window.open("/digital/search");
 }
-
+//function called to grab the current link location and append to form on MASC site to provide item feedback 
 function SendFeedback(){
     var CurrentLocation = window.location;
          window.location = "https://libraries.wsu.edu/masc/digital-collections-feedback?ref="+CurrentLocation;
