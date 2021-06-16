@@ -12,8 +12,8 @@ function allSearch() {
 function SendFeedback(){
     var CurrentLocation = window.location;
     var CollectionId = window.location.href.split('/collection/')[1].split('/')[0];
-    var itemId = window.location.href.split('/id/')[1].split('/')[0];
-       window.location = "https://libraries.wsu.edu/masc/digital-collections-feedback?ref=" +CurrentLocation+ "&coll="+CollectionId+ "&item="+itemId;
+    var ItemId = window.location.href.split('/id/')[1].split('/')[0];
+       window.location = "https://libraries.wsu.edu/masc/digital-collections-feedback?ref=" +CurrentLocation+ "&coll="+CollectionId+ "&item="+ItemId;
 }
 
 
@@ -39,42 +39,38 @@ function SendFeedback(){
   });
 
 })();
-//function for twitter follow button but will be link to feedback form soon. Testing
+//Function to insert Feedback Link
 
   (function () {
   'use strict';
 
-  function loadScript(src) {
-    return new Promise(function(resolve, reject) {
-      const script = document.createElement('script');
-      script.src = src;
-      script.onload = resolve;
-      script.onerror = reject;
-      document.head.appendChild(script);
-    });
-  }
+  let globalScope = false;
+  // set to true to run this recipe for the entire site
+  let collectionScope = [
+    'nash'
+  ];
 
-  function insertTwitterFollowButton(screenName){
-    const twitBtn = document.getElementsByClassName('twitter-follow-button-rendered');
-    if (twitBtn == null || twitBtn.length === 0) {
+  function insertTwitterFollowButton(){
+    const twitBtn = document.getElementsByClassName('ItemOptions-itemOptions');
+  //  if (twitBtn == null || twitBtn.length === 0) {
       const linkContainer = document.createElement('div');
       linkContainer.className = 'text-center';
-    //  linkContainer.innerHTML = '<a href="https://twitter.com/' + screenName + '" class="twitter-follow-button" data-show-count="false" data-show-screen-name="true" data-size="large">Follow WSU Libraries</a>';
-       linkContainer.innerHTML = '<a href="javascript:SendFeedback()" class="twitter-follow-button" data-show-count="false" data-show-screen-name="true" data-size="large">Feedback</a>';
-      Array.from(document.querySelectorAll('.Footer-footerContainer'))
+      //linkContainer.innerHTML = '<a href="https://twitter.com/' + screenName + '" class="twitter-follow-button" data-show-count="false" data-show-screen-name="true" data-size="large">Follow WSU Libraries</a>';
+       linkContainer.innerHTML = '<a href="javascript:SendFeedback()" class="twitter-follow-button" data-show-count="false" data-show-screen-name="true" data-size="large">Tell us about this Item!</a>';
+      Array.from(document.querySelectorAll('.ItemOptions-itemOptions'))
         .forEach(el => {
-          el.appendChild(linkContainer.cloneNode(true));
+          el.prepend(linkContainer.cloneNode(true));
         });
 
-      loadScript('https://platform.twitter.com/widgets.js');
-    }
+    //  loadScript('https://platform.twitter.com/widgets.js');
+    //}
   }
 
-  const twitterScreenName = 'WSULibraries';
+  //const twitterScreenName = 'WSULibraries';
 
-  document.addEventListener('cdm-home-page:ready', function() {
+ /* document.addEventListener('cdm-home-page:ready', function() {
     insertTwitterFollowButton(twitterScreenName);
-  });
+  }); -->
   document.addEventListener('cdm-about-page:ready', function() {
     insertTwitterFollowButton(twitterScreenName);
   });
@@ -86,13 +82,16 @@ function SendFeedback(){
   });
   document.addEventListener('cdm-advanced-search-page:ready', function() {
     insertTwitterFollowButton(twitterScreenName);
+  }); */
+  document.addEventListener('cdm-item-page:ready', function(e) {
+    let collection = e.detail.collectionId;
+    if (globalScope || collectionScope.includes(collection)){
+    insertTwitterFollowButton();
+  }
   });
-  document.addEventListener('cdm-item-page:ready', function() {
+  /* document.addEventListener('cdm-custom-page:ready', function() {
     insertTwitterFollowButton(twitterScreenName);
-  });
-  document.addEventListener('cdm-custom-page:ready', function() {
-    insertTwitterFollowButton(twitterScreenName);
-  });
+  });  */
 
 })();
 //PDF button download (changing this to a item feedback link...)
