@@ -39,7 +39,7 @@ function SendFeedback(){
   });
 
 })();
-//Function to insert Feedback Link into the Nash Collection -->
+//Function to insert Feedback Link into the Nash Collection --> Removing for NASH via request
 
   (function () {
   'use strict';
@@ -47,7 +47,7 @@ function SendFeedback(){
   let globalScope = false;
   // set to true to run this recipe for the entire site
   let collectionScope = [
-    'nash'
+    ''
   ];
 
   function insertTwitterFollowButton(){
