@@ -108,13 +108,48 @@ function insertFeedbackbutton(){
 //  const twitBtn = document.getElementsByClassName('ItemOptions-itemOptions');
 //  if (twitBtn == null || twitBtn.length === 0) {
     const linkContainer = document.createElement('div');
-    linkContainer.className = 'text-center';
+    linkContainer.id = "feedback";
+    linkContainer.style.textAlign = "center";
+    linkContainer.style.fontSize = "larger";
+    linkContainer.style.paddingRight = "15px";
+    linkContainer.style.paddingTop = "10px";
+    //linkContainer.className = 'text-center';
     //linkContainer.innerHTML = '<a href="https://twitter.com/' + screenName + '" class="twitter-follow-button" data-show-count="false" data-show-screen-name="true" data-size="large">Follow WSU Libraries</a>';
-     linkContainer.innerHTML = '<a href="javascript:SendFeedback()" class="twitter-follow-button">Tell us about this Item!</a>';
+     //linkContainer.innerHTML = '<a href="javascript:SendFeedback()" style="font-weight:bold;padding-right: 5px; padding-top: 15px;">Tell us about this Item!</a>';
+     linkContainer.innerHTML = '<a href="javascript:SendFeedback()" style="font-weight: bold;">Tell us about this item!</a>';
+
+     const button = document.createElement('div');
+     button.className = 'btn-group btn-group-default';
+
+     let buttonAnchor = document.createElement('a');
+     buttonAnchor.title = "Tell us about this item!";
+     buttonAnchor.href = "javascript:SendFeedback()";
+     buttonAnchor.className = 'cdm-btn btn btn-primary';
+     buttonAnchor.target = '_self';
+
+    let buttonIcon = document.createElement('span');
+    buttonIcon.className = 'fa fa-comment fa-2x';
+    buttonAnchor.appendChild(buttonIcon);
+    button.appendChild(buttonAnchor);
+
+
+
+
+
     Array.from(document.querySelectorAll('.ItemOptions-itemOptions'))
       .forEach(el => {
         el.prepend(linkContainer.cloneNode(true));
       });
+
+
+    Array.from(document.querySelectorAll('.ItemOptions-itemOptions>.btn-toolbar'))
+      .forEach(el => {
+        el.prepend(button.cloneNode(true));
+      });
+
+
+
+
 
   //  loadScript('https://platform.twitter.com/widgets.js');
   //}
