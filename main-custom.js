@@ -39,84 +39,25 @@ function SendFeedback(){
   });
 
 })();
-//Function to insert Feedback Link into the Nash Collection --> Removing for NASH via request
-
-  (function () {
-  'use strict';
-
-  let globalScope = false;
-  // set to true to run this recipe for the entire site
-  let collectionScope = [
-    ''
-  ];
-
-  function insertTwitterFollowButton(){
-    const twitBtn = document.getElementsByClassName('ItemOptions-itemOptions');
-  //  if (twitBtn == null || twitBtn.length === 0) {
-      const linkContainer = document.createElement('div');
-      linkContainer.className = 'text-center';
-      //linkContainer.innerHTML = '<a href="https://twitter.com/' + screenName + '" class="twitter-follow-button" data-show-count="false" data-show-screen-name="true" data-size="large">Follow WSU Libraries</a>';
-       linkContainer.innerHTML = '<a href="javascript:SendFeedback()" class="twitter-follow-button" data-show-count="false" data-show-screen-name="true" data-size="large">Tell us about this Item!</a>';
-      Array.from(document.querySelectorAll('.ItemOptions-itemOptions'))
-        .forEach(el => {
-          el.prepend(linkContainer.cloneNode(true));
-        });
-
-    //  loadScript('https://platform.twitter.com/widgets.js');
-    //}
-  }
-
-  //const twitterScreenName = 'WSULibraries';
-
- /* document.addEventListener('cdm-home-page:ready', function() {
-    insertTwitterFollowButton(twitterScreenName);
-  }); -->
-  document.addEventListener('cdm-about-page:ready', function() {
-    insertTwitterFollowButton(twitterScreenName);
-  });
-  document.addEventListener('cdm-search-page:ready', function() {
-    insertTwitterFollowButton(twitterScreenName);
-  });
-  document.addEventListener('cdm-collection-page:ready', function() {
-    insertTwitterFollowButton(twitterScreenName);
-  });
-  document.addEventListener('cdm-advanced-search-page:ready', function() {
-    insertTwitterFollowButton(twitterScreenName);
-  }); */
-  document.addEventListener('cdm-item-page:ready', function(e) {
-    let collection = e.detail.collectionId;
-    if (globalScope || collectionScope.includes(collection)){
-    insertTwitterFollowButton();
-  }
-  });
-  /* document.addEventListener('cdm-custom-page:ready', function() {
-    insertTwitterFollowButton(twitterScreenName);
-  });  */
-
-})();
-
+//testing function for SendFeedback ---
 (function () {
 'use strict';
 
 let globalScope = false;
 // set to true to run this recipe for the entire site
 let collectionScope = [
-  'mccaw'
+  ''
 ];
 
 function insertFeedbackbutton(){
-//  const twitBtn = document.getElementsByClassName('ItemOptions-itemOptions');
-//  if (twitBtn == null || twitBtn.length === 0) {
+
     const linkContainer = document.createElement('div');
     linkContainer.id = "feedback";
     linkContainer.style.textAlign = "center";
     linkContainer.style.fontSize = "larger";
     linkContainer.style.paddingRight = "15px";
     linkContainer.style.paddingTop = "10px";
-    //linkContainer.className = 'text-center';
-    //linkContainer.innerHTML = '<a href="https://twitter.com/' + screenName + '" class="twitter-follow-button" data-show-count="false" data-show-screen-name="true" data-size="large">Follow WSU Libraries</a>';
-     //linkContainer.innerHTML = '<a href="javascript:SendFeedback()" style="font-weight:bold;padding-right: 5px; padding-top: 15px;">Tell us about this Item!</a>';
-     linkContainer.innerHTML = '<a href="javascript:SendFeedback()" style="font-weight: bold;">Tell us about this item!</a>';
+    linkContainer.innerHTML = '<a href="javascript:SendFeedback()" style="font-weight: bold;">Tell us about this item!</a>';
 
      const button = document.createElement('div');
      button.className = 'btn-group btn-group-default';
@@ -149,38 +90,78 @@ function insertFeedbackbutton(){
 
 
 
-
-
-  //  loadScript('https://platform.twitter.com/widgets.js');
-  //}
 }
 
-//const twitterScreenName = 'WSULibraries';
 
-/* document.addEventListener('cdm-home-page:ready', function() {
-  insertTwitterFollowButton(twitterScreenName);
-}); -->
-document.addEventListener('cdm-about-page:ready', function() {
-  insertTwitterFollowButton(twitterScreenName);
-});
-document.addEventListener('cdm-search-page:ready', function() {
-  insertTwitterFollowButton(twitterScreenName);
-});
-document.addEventListener('cdm-collection-page:ready', function() {
-  insertTwitterFollowButton(twitterScreenName);
-});
-document.addEventListener('cdm-advanced-search-page:ready', function() {
-  insertTwitterFollowButton(twitterScreenName);
-}); */
 document.addEventListener('cdm-item-page:ready', function(e) {
   let collection = e.detail.collectionId;
   if (globalScope || collectionScope.includes(collection)){
   insertFeedbackbutton();
 }
 });
-/* document.addEventListener('cdm-custom-page:ready', function() {
-  insertTwitterFollowButton(twitterScreenName);
-});  */
+
+})();
+
+//Production function for Send Feedback button -- change to NASH when ready 
+(function () {
+'use strict';
+
+let globalScope = false;
+// set to true to run this recipe for the entire site
+let collectionScope = [
+  'mccaw'
+];
+
+function insertFeedbackbutton(){
+
+    const linkContainer = document.createElement('div');
+    linkContainer.id = "feedback";
+    linkContainer.style.textAlign = "center";
+    linkContainer.style.fontSize = "larger";
+    linkContainer.style.paddingRight = "15px";
+    linkContainer.style.paddingTop = "10px";
+    linkContainer.innerHTML = '<a href="javascript:SendFeedback()" style="font-weight: bold;">Tell us about this item!</a>';
+
+     const button = document.createElement('div');
+     button.className = 'btn-group btn-group-default';
+
+     let buttonAnchor = document.createElement('a');
+     buttonAnchor.title = "Tell us about this item!";
+     buttonAnchor.href = "javascript:SendFeedback()";
+     buttonAnchor.className = 'cdm-btn btn btn-primary';
+     buttonAnchor.target = '_self';
+
+    let buttonIcon = document.createElement('span');
+    buttonIcon.className = 'fa fa-comment fa-2x';
+    buttonAnchor.appendChild(buttonIcon);
+    button.appendChild(buttonAnchor);
+
+
+
+
+
+    Array.from(document.querySelectorAll('.ItemOptions-itemOptions'))
+      .forEach(el => {
+        el.prepend(linkContainer.cloneNode(true));
+      });
+
+
+    Array.from(document.querySelectorAll('.ItemOptions-itemOptions>.btn-toolbar'))
+      .forEach(el => {
+        el.prepend(button.cloneNode(true));
+      });
+
+
+
+}
+
+
+document.addEventListener('cdm-item-page:ready', function(e) {
+  let collection = e.detail.collectionId;
+  if (globalScope || collectionScope.includes(collection)){
+  insertFeedbackbutton();
+}
+});
 
 })();
 
