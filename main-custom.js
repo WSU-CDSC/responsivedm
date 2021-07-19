@@ -102,14 +102,14 @@ document.addEventListener('cdm-item-page:ready', function(e) {
 
 })();
 
-//Production function for Send Feedback button -- change to NASH when ready 
+//Production function for Send Feedback button -- currently set only for Irwin Nash Collection 
 (function () {
 'use strict';
 
 let globalScope = false;
 // set to true to run this recipe for the entire site
 let collectionScope = [
-  'mccaw'
+  'nash'
 ];
 
 function insertFeedbackbutton(){
