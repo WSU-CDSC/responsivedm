@@ -13,7 +13,12 @@ function SendFeedback(){
     var CurrentLocation = window.location;
     var CollectionId = window.location.href.split('/collection/')[1].split('/')[0];
     var ItemId = window.location.href.split('/id/')[1].split('/')[0];
-       window.location = "https://libraries.wsu.edu/masc/digital-collections-feedback?ref=" +CurrentLocation+ "&coll="+CollectionId+ "&item="+ItemId;
+    if (CollectionId == "nash" ){
+      window.location = "https://libraries.wsu.edu/masc/digital-collections-feedback?ref=" +CurrentLocation+ "&coll="+CollectionId+ "&item="+ItemId;
+    }else{
+      window.location = "https://libraries.wsu.edu/masc/digital-collections-feedback-pc1?ref=" +CurrentLocation+ "&coll="+CollectionId+ "&item="+ItemId;
+    }
+
 }
 
 
@@ -102,14 +107,15 @@ document.addEventListener('cdm-item-page:ready', function(e) {
 
 })();
 
-//Production function for Send Feedback button -- currently set only for Irwin Nash Collection 
+//Production function for Send Feedback button -- currently set only for Irwin Nash Collection
 (function () {
 'use strict';
 
 let globalScope = false;
 // set to true to run this recipe for the entire site
 let collectionScope = [
-  'nash'
+  'nash',
+  'p16866coll20'
 ];
 
 function insertFeedbackbutton(){
